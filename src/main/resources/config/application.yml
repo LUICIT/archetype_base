@@ -1,0 +1,48 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: base-project
+
+  profiles:
+    active: dev
+
+  jpa:
+    open-in-view: false
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  jackson:
+    default-property-inclusion: non_null
+
+  flyway:
+    enabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: always
+
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
+
+app:
+  security:
+    login-enabled: true
+    login-identifier: email
+  database:
+    soft-delete: true
+  jwt:
+    secret: FEzDNgOkTM2kxqZKSgNlMva8cVb1/zjft10VsMcyYvI=
+    expiration: 3600000

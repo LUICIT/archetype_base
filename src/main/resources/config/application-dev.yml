@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/archetype_base
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+
+  flyway:
+    enabled: true
+    locations: classpath:db/migration/postgresql
+    baseline-on-migrate: true
+
+logging:
+  level:
+    root: info
+    org.flywaydb: debug
+    org.springframework.security: debug
+    org.hibernate.SQL: debug
+    org.hibernate.orm.jdbc.bind: trace
