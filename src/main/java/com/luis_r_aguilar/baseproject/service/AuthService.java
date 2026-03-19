@@ -1,15 +1,15 @@
 package com.luis_r_aguilar.baseproject.service;
 
-import com.luis_r_aguilar.baseproject.config.AppProperties;
-import com.luis_r_aguilar.baseproject.converter.GenericConverter;
-import com.luis_r_aguilar.baseproject.domain.entity.BaseUserEntity;
-import com.luis_r_aguilar.baseproject.domain.repository.BaseUserRepository;
-import com.luis_r_aguilar.baseproject.security.JwtUtil;
 import com.luis_r_aguilar.baseproject.validation.EmailValidationModel;
 import com.luis_r_aguilar.baseproject.web.model.BaseUserModel;
 import com.luis_r_aguilar.baseproject.web.model.LoginModel;
 import com.luis_r_aguilar.baseproject.web.model.RegisterBaseUserModel;
 import com.luis_r_aguilar.baseproject.web.model.TokenModel;
+import com.luisraguilar.luisprojectscore.config.CoreProperties;
+import com.luisraguilar.luisprojectscore.converter.GenericConverter;
+import com.luisraguilar.luisprojectscore.domain.entity.BaseUserEntity;
+import com.luisraguilar.luisprojectscore.domain.repository.BaseUserRepository;
+import com.luisraguilar.luisprojectscore.security.JwtUtil;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.Validator;
 import org.jspecify.annotations.NonNull;
@@ -45,7 +45,7 @@ public class AuthService {
 
     private final JwtUtil jwtUtil;
     private final Validator validator;
-    private final AppProperties appProperties;
+    private final CoreProperties coreProperties;
     private final PasswordEncoder passwordEncoder;
     private final BaseUserRepository baseUserRepository;
     private final AuthenticationManager authenticationManager;
@@ -57,14 +57,14 @@ public class AuthService {
 
     public AuthService(JwtUtil jwtUtil,
                        Validator validator,
-                       AppProperties appProperties,
+                       CoreProperties coreProperties,
                        PasswordEncoder passwordEncoder,
                        BaseUserRepository baseUserRepository,
                        AuthenticationManager authenticationManager,
                        @Lazy AuthService self) {
         this.jwtUtil = jwtUtil;
         this.validator = validator;
-        this.appProperties = appProperties;
+        this.coreProperties = coreProperties;
         this.passwordEncoder = passwordEncoder;
         this.baseUserRepository = baseUserRepository;
         this.authenticationManager = authenticationManager;
@@ -77,7 +77,7 @@ public class AuthService {
         String baseUserModelStr = "baseUserModel";
         BindException errors = new BindException(registerBaseUserModel, baseUserModelStr);
 
-        if (usernameStr.equalsIgnoreCase(appProperties.getSecurity().getLoginIdentifier())) {
+        if (usernameStr.equalsIgnoreCase(coreProperties.getSecurity().getLoginIdentifier())) {
             String username = registerBaseUserModel.getUsername();
             if (username == null || username.isBlank()) {
                 errors.addError(new FieldError(baseUserModelStr, usernameStr, "Username is required"));
@@ -173,7 +173,7 @@ public class AuthService {
         String loginModelStr = "loginModel";
         BindException errors = new BindException(loginModel, loginModelStr);
 
-        if (usernameStr.equalsIgnoreCase(appProperties.getSecurity().getLoginIdentifier())) {
+        if (usernameStr.equalsIgnoreCase(coreProperties.getSecurity().getLoginIdentifier())) {
             String username = loginModel.getUsername();
             if (username == null || username.isBlank()) {
                 errors.addError(new FieldError(loginModelStr, usernameStr, "Username is required"));

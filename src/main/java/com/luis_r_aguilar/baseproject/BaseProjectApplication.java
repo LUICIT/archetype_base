@@ -1,18 +1,27 @@
 package com.luis_r_aguilar.baseproject;
 
-import com.luis_r_aguilar.baseproject.config.AppProperties;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.boot.persistence.autoconfigure.EntityScan;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
+@SpringBootApplication(scanBasePackages = {
+        "com.luis_r_aguilar.baseproject",
+        "com.luisraguilar.luisprojectscore"
+})
 @EnableJpaAuditing
-@SpringBootApplication
-@EnableConfigurationProperties(AppProperties.class)
+@EnableJpaRepositories(basePackages = {
+        "com.luis_r_aguilar.baseproject.domain.repository",
+        "com.luisraguilar.luisprojectscore.domain.repository"
+})
+@EntityScan(basePackages = {
+        "com.luis_r_aguilar.baseproject.domain.entity",
+        "com.luisraguilar.luisprojectscore.domain.entity"
+})
 public class BaseProjectApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(BaseProjectApplication.class, args);
-	}
-
+    public static void main(String[] args) {
+        SpringApplication.run(BaseProjectApplication.class, args);
+    }
 }

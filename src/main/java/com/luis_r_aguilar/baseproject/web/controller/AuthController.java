@@ -1,11 +1,11 @@
 package com.luis_r_aguilar.baseproject.web.controller;
 
-import com.luis_r_aguilar.baseproject.exception.ErrorResponse;
 import com.luis_r_aguilar.baseproject.service.AuthService;
 import com.luis_r_aguilar.baseproject.web.model.BaseUserModel;
 import com.luis_r_aguilar.baseproject.web.model.LoginModel;
 import com.luis_r_aguilar.baseproject.web.model.RegisterBaseUserModel;
 import com.luis_r_aguilar.baseproject.web.model.TokenModel;
+import com.luisraguilar.luisprojectscore.exception.ErrorResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
