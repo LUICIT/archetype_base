@@ -1,10 +1,13 @@
-package com.luis_r_aguilar.baseproject.web.controller;
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+package ${package}.web.controller;
 
-import com.luis_r_aguilar.baseproject.service.AuthService;
-import com.luis_r_aguilar.baseproject.web.model.UserModel;
-import com.luis_r_aguilar.baseproject.web.model.LoginModel;
-import com.luis_r_aguilar.baseproject.web.model.RegisterUserModel;
-import com.luis_r_aguilar.baseproject.web.model.TokenModel;
+import ${package}.service.AuthService;
+import ${package}.web.model.UserModel;
+import ${package}.web.model.LoginModel;
+import ${package}.web.model.RegisterUserModel;
+import ${package}.web.model.TokenModel;
 import io.github.luicit.luisprojectscore.exception.ErrorResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;

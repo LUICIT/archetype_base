@@ -1,30 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>4.0.3</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<version>4.0.3</version> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.luis-r-aguilar</groupId>
-	<artifactId>base-project</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>base-project</name>
+	<groupId>${groupId}</groupId>
+	<artifactId>${artifactId}</artifactId>
+	<version>${version}</version>
+	<name>${artifactId}</name>
     <description>Proyecto base para generar APIs REST usando la libreria luis-projects-core</description>
-	<url/>
 	<licenses>
-		<license/>
+		<license />
 	</licenses>
 	<developers>
-		<developer/>
+		<developer />
 	</developers>
 	<scm>
-		<connection/>
-		<developerConnection/>
-		<tag/>
-		<url/>
 	</scm>
 	<properties>
 		<java.version>21</java.version>
@@ -36,7 +29,7 @@
         <dependency>
             <groupId>io.github.luicit</groupId>
             <artifactId>luis-projects-core</artifactId>
-            <version>1.0.4</version>
+            <version>1.0.0</version>
         </dependency>
 
         <!-- Web -->

@@ -1,4 +1,7 @@
-package com.luis_r_aguilar.baseproject.config;
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+package ${package}.config;
 
 import io.github.luicit.luisprojectscore.config.RouteAuthorizationConfig;
 import org.springframework.context.annotation.Bean;

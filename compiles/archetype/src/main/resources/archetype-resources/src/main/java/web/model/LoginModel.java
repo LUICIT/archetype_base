@@ -1,6 +1,8 @@
-package com.luis_r_aguilar.baseproject.web.model;
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+package ${package}.web.model;
 
-import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
@@ -12,19 +14,13 @@ import lombok.Setter;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class BaseUserModel {
-
-    private Long id;
+public class LoginModel {
 
     @NotBlank
-    @Size(min = 3, max = 90)
-    private String name;
-
-    @Size(min = 10, max = 60)
+    @Size(min = 10, max = 120)
     private String username;
 
-    @Email
-    @Size(min = 10, max = 120)
-    private String email;
+    @NotBlank
+    private String password;
 
 }

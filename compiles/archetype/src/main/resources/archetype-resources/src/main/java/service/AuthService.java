@@ -1,12 +1,15 @@
-package com.luis_r_aguilar.baseproject.service;
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+package ${package}.service;
 
-import com.luis_r_aguilar.baseproject.domain.entity.UserEntity;
-import com.luis_r_aguilar.baseproject.domain.repository.UserRepository;
-import com.luis_r_aguilar.baseproject.validation.EmailValidationModel;
-import com.luis_r_aguilar.baseproject.web.model.LoginModel;
-import com.luis_r_aguilar.baseproject.web.model.RegisterUserModel;
-import com.luis_r_aguilar.baseproject.web.model.TokenModel;
-import com.luis_r_aguilar.baseproject.web.model.UserModel;
+import ${package}.domain.entity.UserEntity;
+import ${package}.domain.repository.UserRepository;
+import ${package}.validation.EmailValidationModel;
+import ${package}.web.model.LoginModel;
+import ${package}.web.model.RegisterUserModel;
+import ${package}.web.model.TokenModel;
+import ${package}.web.model.UserModel;
 import io.github.luicit.luisprojectscore.config.CoreProperties;
 import io.github.luicit.luisprojectscore.converter.GenericConverter;
 import io.github.luicit.luisprojectscore.security.JwtUtil;

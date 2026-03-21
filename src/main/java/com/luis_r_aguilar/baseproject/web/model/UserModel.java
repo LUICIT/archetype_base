@@ -12,7 +12,7 @@ import lombok.Setter;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class RegisterBaseUserModel {
+public class UserModel {
 
     private Long id;
 
@@ -26,9 +26,5 @@ public class RegisterBaseUserModel {
     @Email
     @Size(min = 10, max = 120)
     private String email;
-
-    @NotBlank
-    @Size(min = 8)
-    private String password;
 
 }
